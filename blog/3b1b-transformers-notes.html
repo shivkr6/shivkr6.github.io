@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3Blue1Brown Transformers Notes (Chapters 5–7) · Shivang</title>
+  <meta name="description" content="Handwritten notes from watching chapters 5–7 of 3Blue1Brown's deep learning series on transformers, attention, and MLPs.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="3Blue1Brown Transformers Notes (Chapters 5–7) · Shivang">
+  <meta property="og:description" content="Handwritten notes from watching chapters 5–7 of 3Blue1Brown's deep learning series on transformers, attention, and MLPs.">
+  <meta property="og:url" content="https://shivkr6.github.io/blog/3b1b-transformers-notes.html">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../components.js"></script>
+</head>
+<body>
+  <site-header></site-header>
+
+  <main id="main">
+    <article class="post">
+      <h1>3Blue1Brown Transformers Notes (Chapters 5–7)</h1>
+      <time class="meta" datetime="2026-11-24">24 November 2026</time>
+
+      <p>Handwritten notes I took while watching chapters 5, 6, and 7 of <a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank" rel="noopener noreferrer">3Blue1Brown's deep learning series</a> on transformers.</p>
+
+      <ul>
+        <li><a href="#ch5">Chapter 5: Transformers, the tech behind LLMs</a></li>
+        <li><a href="#ch6">Chapter 6: Attention in transformers, step-by-step</a></li>
+        <li><a href="#ch7">Chapter 7: How might LLMs store facts</a></li>
+      </ul>
+
+      <h2 id="ch5">Chapter 5: Transformers, the tech behind LLMs</h2>
+      <p><a href="https://www.youtube.com/watch?v=wjZofJX0v4M" target="_blank" rel="noopener noreferrer">Watch the video</a></p>
+      <img src="../images/3b1b-transformers/ch5-01.webp" alt="Chapter 5 notes, page 1" width="1498" height="1938">
+      <img src="../images/3b1b-transformers/ch5-02.webp" alt="Chapter 5 notes, page 2" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-03.webp" alt="Chapter 5 notes, page 3" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-04.webp" alt="Chapter 5 notes, page 4" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-05.webp" alt="Chapter 5 notes, page 5" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-06.webp" alt="Chapter 5 notes, page 6" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-07.webp" alt="Chapter 5 notes, page 7" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-08.webp" alt="Chapter 5 notes, page 8" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-09.webp" alt="Chapter 5 notes, page 9" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-10.webp" alt="Chapter 5 notes, page 10" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-11.webp" alt="Chapter 5 notes, page 11" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-12.webp" alt="Chapter 5 notes, page 12" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch5-13.webp" alt="Chapter 5 notes, page 13" width="1498" height="919" loading="lazy" decoding="async">
+
+      <h2 id="ch6">Chapter 6: Attention in transformers, step-by-step</h2>
+      <p><a href="https://www.youtube.com/watch?v=eMlx5fFNoYc" target="_blank" rel="noopener noreferrer">Watch the video</a></p>
+      <img src="../images/3b1b-transformers/ch6-01.webp" alt="Chapter 6 notes, page 1" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-02.webp" alt="Chapter 6 notes, page 2" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-03.webp" alt="Chapter 6 notes, page 3" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-04.webp" alt="Chapter 6 notes, page 4" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-05.webp" alt="Chapter 6 notes, page 5" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-06.webp" alt="Chapter 6 notes, page 6" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-07.webp" alt="Chapter 6 notes, page 7" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-08.webp" alt="Chapter 6 notes, page 8" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-09.webp" alt="Chapter 6 notes, page 9" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-10.webp" alt="Chapter 6 notes, page 10" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-11.webp" alt="Chapter 6 notes, page 11" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-12.webp" alt="Chapter 6 notes, page 12" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-13.webp" alt="Chapter 6 notes, page 13" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-14.webp" alt="Chapter 6 notes, page 14" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-15.webp" alt="Chapter 6 notes, page 15" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-16.webp" alt="Chapter 6 notes, page 16" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-17.webp" alt="Chapter 6 notes, page 17" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-18.webp" alt="Chapter 6 notes, page 18" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-19.webp" alt="Chapter 6 notes, page 19" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch6-20.webp" alt="Chapter 6 notes, page 20" width="1498" height="1507" loading="lazy" decoding="async">
+
+      <h2 id="ch7">Chapter 7: How might LLMs store facts</h2>
+      <p><a href="https://www.youtube.com/watch?v=9-Jl0dxWQs8" target="_blank" rel="noopener noreferrer">Watch the video</a></p>
+      <img src="../images/3b1b-transformers/ch7-01.webp" alt="Chapter 7 notes, page 1" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-02.webp" alt="Chapter 7 notes, page 2" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-03.webp" alt="Chapter 7 notes, page 3" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-04.webp" alt="Chapter 7 notes, page 4" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-05.webp" alt="Chapter 7 notes, page 5" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-06.webp" alt="Chapter 7 notes, page 6" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-07.webp" alt="Chapter 7 notes, page 7" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-08.webp" alt="Chapter 7 notes, page 8" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-09.webp" alt="Chapter 7 notes, page 9" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-10.webp" alt="Chapter 7 notes, page 10" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-11.webp" alt="Chapter 7 notes, page 11" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-12.webp" alt="Chapter 7 notes, page 12" width="1498" height="1938" loading="lazy" decoding="async">
+      <img src="../images/3b1b-transformers/ch7-13.webp" alt="Chapter 7 notes, page 13" width="1498" height="556" loading="lazy" decoding="async">
+    </article>
+
+    <p class="back"><a href="index.html">← All posts</a></p>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>

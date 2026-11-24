@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog · Shivang</title>
+  <meta name="description" content="Blog posts by Shivang.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog · Shivang">
+  <meta property="og:description" content="Blog posts by Shivang.">
+  <meta property="og:url" content="https://shivkr6.github.io/blog/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../components.js"></script>
+</head>
+<body>
+  <site-header></site-header>
+
+  <main id="main">
+    <h1>Blog</h1>
+    <ul class="post-list" id="post-list"></ul>
+    <noscript><p>JavaScript is needed to show the list of posts.</p></noscript>
+  </main>
+
+  <site-footer></site-footer>
+
+  <script src="posts.js"></script>
+  <script>
+    (function () {
+      const list = document.getElementById("post-list");
+      const formatDate = (iso) =>
+        new Date(iso + "T00:00:00").toLocaleDateString("en-GB", {
+          day: "numeric",
+          month: "short",
+          year: "numeric",
+        });
+
+      const posts = [...POSTS].sort((a, b) => b.date.localeCompare(a.date));
+
+      if (posts.length === 0) {
+        list.outerHTML = "<p>No posts yet.</p>";
+        return;
+      }
+
+      // Build with DOM APIs (textContent) so post data is never parsed as HTML.
+      for (const post of posts) {
+        const li = document.createElement("li");
+
+        const head = document.createElement("div");
+        head.className = "post-head";
+
+        const link = document.createElement("a");
+        link.href = post.url;
+        link.textContent = post.title;
+        if (/^https?:\/\//.test(post.url)) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        }
+
+        const time = document.createElement("time");
+        time.className = "meta";
+        time.dateTime = post.date;
+        time.textContent = formatDate(post.date);
+
+        head.append(link, time);
+        li.append(head);
+
+        if (post.summary) {
+          const p = document.createElement("p");
+          p.className = "meta";
+          p.textContent = post.summary;
+          li.append(p);
+        }
+
+        list.append(li);
+      }
+    })();
+  </script>
+</body>
+</html>

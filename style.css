@@ -1,0 +1,665 @@
+/* ---------- Fonts ---------- */
+/* Figtree (SIL Open Font License, see fonts/OFL.txt). Variable font, weights 300–900. */
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("fonts/figtree-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Figtree";
+  font-style: italic;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("fonts/figtree-latin-italic.woff2") format("woff2");
+}
+
+/* ---------- Theme ---------- */
+/* Based on the VS Code "Better Solarized Light" theme. Text colours are
+   darkened slightly from stock Solarized so they pass WCAG AA contrast. */
+:root {
+  color-scheme: light;
+  --bg: #fdf6e3;          /* editor background */
+  --heading: #073642;     /* Solarized base02 */
+  --text: #3a5058;        /* between base02 and base01 */
+  --muted: #586e75;       /* Solarized base01 */
+  --accent: #268bd2;      /* Solarized blue: underlines, dots, borders */
+  --accent-text: #1d6a9e; /* darker blue for small accent-coloured text */
+  --rule: #ddd6c1;        /* editorGroup.border */
+  --code-bg: #eee8d5;     /* sideBar.background */
+  --hover-bg: #f5eed9;
+  --highlight: #f5e296;   /* warm yellow highlighter */
+  --font: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --width: 48rem;
+
+  /* Type scale: keep every font-size on one of these three steps.
+     19px is the minimum; nothing on the site is smaller. */
+  --fs-base: 1.1875rem;  /* 19px: body, nav, h3, dates, PR numbers, footer, code */
+  --fs-large: 1.5rem;    /* 24px: section headings */
+  --fs-xl: 2rem;         /* 32px: page title, site name */
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--fs-base);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+site-header,
+main,
+site-footer {
+  display: block;
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+main {
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--heading);
+}
+
+h1 {
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+}
+
+h2 {
+  font-size: var(--fs-large);
+  margin: 2.5rem 0 1rem;
+}
+
+h3 {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  margin: 0;
+}
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.15s, text-decoration-thickness 0.15s;
+}
+
+a:hover {
+  color: var(--accent-text);
+  text-decoration-thickness: 2px;
+}
+
+a[target="_blank"]::after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.18em;
+  font-size: 0.78em;
+  line-height: 1;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s, transform 0.15s;
+}
+
+a[target="_blank"]:hover::after,
+.prs li:hover a[target="_blank"]::after,
+.post-list li:hover .post-head a[target="_blank"]::after,
+.talk:hover h2 a[target="_blank"]::after {
+  color: var(--accent-text);
+  transform: translate(1px, -1px);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: #d3e4f0;
+}
+
+mark {
+  background: var(--highlight);
+  color: var(--heading);
+  padding: 0.05em 0.22em;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+mark a {
+  color: inherit;
+}
+
+mark a:hover {
+  color: var(--accent-text);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+blockquote {
+  margin: 1.75rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+  font-style: italic;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote footer {
+  margin-top: 0.6rem;
+  font-style: normal;
+  color: var(--text);
+}
+
+code {
+  font-family: var(--mono);
+  font-size: var(--fs-base);
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+pre {
+  background: var(--code-bg);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: var(--fs-base);
+}
+
+.meta {
+  color: var(--muted);
+  font-size: var(--fs-base);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Section headings, with a thin rule above each section */
+main > section > h2 {
+  margin: 0 0 1.25rem;
+}
+
+main > section + section {
+  margin-top: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  z-index: 10;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Header / footer ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 1.5rem 0 1.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-name {
+  font-weight: 800;
+  font-size: var(--fs-xl);
+  letter-spacing: -0.02em;
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.site-header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-header nav a {
+  font-size: var(--fs-base);
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-header nav a:hover {
+  color: var(--text);
+}
+
+.site-header nav a[aria-current] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.site-footer {
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: var(--fs-base);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- Home ---------- */
+.intro p {
+  margin: 0 0 1.5rem;
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.social li + li::before {
+  content: "·";
+  color: var(--muted);
+  margin-right: 0.75rem;
+}
+
+/* Experience */
+.entry {
+  margin-bottom: 1.75rem;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 1rem;
+}
+
+.entry-head .meta {
+  font-style: italic;
+}
+
+.entry p {
+  margin: 0.35rem 0 0;
+}
+
+.entry blockquote {
+  margin: 1.1rem 0 0;
+}
+
+.entry blockquote p {
+  margin: 0;
+}
+
+/* Open source */
+.org {
+  margin-bottom: 2rem;
+}
+
+.org:last-child {
+  margin-bottom: 0;
+}
+
+.org-name a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.org-name a:hover {
+  color: var(--accent-text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+.org-name img {
+  width: 28px;
+  height: 28px;
+  margin-right: 0.65rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.prs {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding-left: calc(28px + 0.65rem);
+}
+
+.prs li {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 1rem;
+  padding: 0.3rem 0.5rem;
+  margin: 0 -0.5rem;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.prs li a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.prs li .meta {
+  flex-shrink: 0;
+}
+
+.prs li:hover {
+  background: var(--hover-bg);
+}
+
+.prs li:hover a {
+  color: var(--accent-text);
+  text-decoration-thickness: 2px;
+}
+
+.org details {
+  padding-left: calc(28px + 0.65rem);
+}
+
+.org details .prs {
+  padding-left: 0;
+  margin-top: 0.15rem;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--accent-text);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  margin-top: 0.35rem;
+  width: fit-content;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.4rem;
+  transition: transform 0.15s;
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+/* Swap the summary label between "Show more" and "Show less" */
+details .when-open,
+details[open] .when-closed {
+  display: none;
+}
+
+details[open] .when-open {
+  display: inline;
+}
+
+/* ---------- Lists (blog, talks) ---------- */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-list li {
+  position: relative;
+  padding: 1rem 0.75rem;
+  margin: 0 -0.75rem;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.post-list li:hover {
+  background: var(--hover-bg);
+}
+
+.post-list .post-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 1.25rem;
+}
+
+/* Titles, dates and descriptions match the home page Experience entries */
+.post-list .post-head a {
+  font-weight: 600;
+  color: var(--heading);
+}
+
+.post-list .post-head a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.post-list li:hover .post-head a {
+  color: var(--accent-text);
+  text-decoration-thickness: 2px;
+}
+
+.post-list .post-head .meta {
+  font-style: italic;
+  flex-shrink: 0;
+}
+
+.post-list p,
+.talk p {
+  margin: 0.3rem 0 0;
+}
+
+.talk {
+  position: relative;
+  padding: 1rem 0.75rem;
+  margin: 0 -0.75rem;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.talk:hover {
+  background: var(--hover-bg);
+}
+
+.talk h2 {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  margin: 0;
+}
+
+.talk h2 a {
+  color: var(--heading);
+}
+
+.talk h2 a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.talk:hover h2 a {
+  color: var(--accent-text);
+  text-decoration-thickness: 2px;
+}
+
+.talk p a {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Post ---------- */
+.post {
+  line-height: 1.75;
+}
+
+.post > p,
+.post > ul,
+.post > ol,
+.post > blockquote {
+  max-width: 65ch;
+}
+
+.post > time {
+  display: block;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.post h2 {
+  margin-top: 2.5rem;
+}
+
+.post h3 {
+  margin: 2rem 0 0.5rem;
+}
+
+.post li + li {
+  margin-top: 0.3rem;
+}
+
+.post > img {
+  display: block;
+  width: 100%;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+}
+
+.post > img:has(+ img) {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.post > img + img {
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.back {
+  margin-top: 3.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-weight: 600;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 34rem) {
+  :root {
+    --fs-base: 1.0625rem;  /* 17px */
+    --fs-large: 1.3125rem; /* 21px */
+    --fs-xl: 1.625rem;     /* 26px */
+  }
+
+  main {
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .prs,
+  .org details {
+    padding-left: 0;
+  }
+
+  .post-list .post-head {
+    flex-direction: column;
+    gap: 0.15rem 0;
+  }
+}
+
+/* ---------- Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

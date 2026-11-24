@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shivang</title>
+  <meta name="description" content="Shivang's personal website: experience, open source contributions, blog and talks.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shivang">
+  <meta property="og:description" content="Shivang's personal website: experience, open source contributions, blog and talks.">
+  <meta property="og:url" content="https://shivkr6.github.io/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="components.js"></script>
+</head>
+<body>
+  <site-header></site-header>
+
+  <main id="main">
+    <section class="intro">
+      <h1 class="sr-only">Shivang</h1>
+      <p>Nowadays I'm focused on <mark>robot&nbsp;learning</mark>. Before this, I spent most of my time in <mark>systems&nbsp;programming</mark> and <mark>open&nbsp;source</mark>, working on <mark>Podman's Rust networking stack</mark> (<a href="https://github.com/containers/netavark" target="_blank" rel="noopener noreferrer">Netavark</a>) through the <mark><a href="https://blog.podman.io/2025/12/wrestling-with-netlink-adding-conntrack-support-to-podman-as-an-lfx-mentee/" target="_blank" rel="noopener noreferrer">Linux&nbsp;Foundation</a></mark>, speaking at <mark><a href="https://kccnceu2026.sched.com/event/2CVzI/rust-vs-go-building-a-container-network-stack-from-scratch-matt-heon-red-hat-shivang-k-raghuvanshi-podman-container-tools" target="_blank" rel="noopener noreferrer">KubeCon&nbsp;Europe</a></mark>, and building tools with the <mark><a href="https://github.com/waycrate/" target="_blank" rel="noopener noreferrer">Waycrate</a></mark> community. Outside of that, I like tinkering with <mark>infrastructure</mark> and whatever catches my curiosity.</p>
+      <ul class="social">
+        <li><a href="https://github.com/shivkr6/" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/shivkr6/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="mailto:shivangraghuvanshi2005@gmail.com">Email</a></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="experience">
+      <h2 id="experience">Experience</h2>
+
+      <article class="entry">
+        <div class="entry-head">
+          <h3>LFX Mentee, Podman Container Tools</h3>
+          <span class="meta">Sep – Nov 2025</span>
+        </div>
+        <p>Built the first Rust library for interacting with the Linux kernel's Conntrack subsystem via Netlink, and used it to resolve a critical networking bug in Podman that was causing UDP traffic to drop. Wrote BATS tests to validate functionality and prevent regressions, collaborated closely with Red Hat's Podman maintainers on design and integration, and authored a <a href="https://blog.podman.io/2025/12/wrestling-with-netlink-adding-conntrack-support-to-podman-as-an-lfx-mentee/" target="_blank" rel="noopener noreferrer">blog post</a> on the official Podman blog.</p>
+        <blockquote>
+          <p>"Working with Shivang was a pleasure throughout. He achieved all our project objectives in a timely fashion, and we’re very satisfied with the outcome. He effectively broke down the complex project into smaller, achievable steps to work efficiently towards the end goal. Most importantly for us, he communicates well – he’s not afraid to ask for help or clarification when he needs it, and requests feedback on his progress early and often."</p>
+          <footer><strong>Matt Heon</strong> (Principal Software Engineer, Red Hat) &amp; <strong>Paul Holzinger</strong> (Senior Software Engineer, Red Hat), Podman Maintainers</footer>
+        </blockquote>
+      </article>
+    </section>
+
+    <section aria-labelledby="open-source">
+      <h2 id="open-source">Open Source</h2>
+
+      <article class="org">
+        <h3 class="org-name">
+          <a href="https://github.com/containers" target="_blank" rel="noopener noreferrer">
+            <img src="images/oss/containers.png" alt="" width="28" height="28">
+            containers
+          </a>
+        </h3>
+        <ul class="prs">
+          <li><a href="https://github.com/containers/netavark/pull/1362" target="_blank" rel="noopener noreferrer">firewall: flush stale UDP conntrack entries on port_forward setup/teardown</a> <span class="meta">#1362</span></li>
+          <li><a href="https://github.com/containers/netavark/pull/1357" target="_blank" rel="noopener noreferrer">refactor(netlink): Generalize socket for multi-protocol support</a> <span class="meta">#1357</span></li>
+        </ul>
+        <details>
+          <summary>
+            <span class="when-closed">Show more</span>
+            <span class="when-open">Show less</span>
+          </summary>
+          <ul class="prs">
+            <li><a href="https://github.com/containers/netavark/pull/1316" target="_blank" rel="noopener noreferrer">test: coverage for firewalld's StrictForwardPorts configuration feature.</a> <span class="meta">#1316</span></li>
+            <li><a href="https://github.com/containers/netavark/pull/1304" target="_blank" rel="noopener noreferrer">bridge: unmanaged aardvark-dns fix</a> <span class="meta">#1304</span></li>
+          </ul>
+        </details>
+      </article>
+
+      <article class="org">
+        <h3 class="org-name">
+          <a href="https://github.com/rust-netlink" target="_blank" rel="noopener noreferrer">
+            <img src="images/oss/rust-netlink.png" alt="" width="28" height="28">
+            rust-netlink
+          </a>
+        </h3>
+        <ul class="prs">
+          <li><a href="https://github.com/rust-netlink/netlink-packet-netfilter/pull/15" target="_blank" rel="noopener noreferrer">feat: conntrack 'new' message type</a> <span class="meta">#15</span></li>
+          <li><a href="https://github.com/rust-netlink/netlink-packet-netfilter/pull/14" target="_blank" rel="noopener noreferrer">feat: Add support for deleting conntrack entries</a> <span class="meta">#14</span></li>
+        </ul>
+        <details>
+          <summary>
+            <span class="when-closed">Show more</span>
+            <span class="when-open">Show less</span>
+          </summary>
+          <ul class="prs">
+            <li><a href="https://github.com/rust-netlink/netlink-packet-netfilter/pull/12" target="_blank" rel="noopener noreferrer">Conntrack get netlink netfilter message types</a> <span class="meta">#12</span></li>
+            <li><a href="https://github.com/rust-netlink/netlink-packet-netfilter/pull/11" target="_blank" rel="noopener noreferrer">Use netlink-packet-core 0.8.1</a> <span class="meta">#11</span></li>
+          </ul>
+        </details>
+      </article>
+    </section>
+  </main>
+
+  <site-footer></site-footer>
+</body>
+</html>
