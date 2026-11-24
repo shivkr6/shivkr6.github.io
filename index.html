@@ -34,6 +34,26 @@
 
       <article class="entry">
         <div class="entry-head">
+          <h3>Co-Founder / CTO, Tvashta Labs</h3>
+          <span class="meta">Mar – Oct 2026</span>
+        </div>
+        <p>Architected and built an end-to-end ML experiment tracking, real-time GPU/host observability, and multi-tenant BYOC secret management platform using Go, Python, NATS JetStream, VictoriaMetrics, OpenBao, Kubernetes, and Angular.</p>
+        <details>
+          <summary>
+            <span class="when-closed">Show more</span>
+            <span class="when-open">Show less</span>
+          </summary>
+          <ul>
+            <li>Architected an end-to-end ML experiment tracking &amp; telemetry platform (first-party W&amp;B alternative): built a Python SDK with Hugging Face TrainerCallback integration streaming InfluxDB Line Protocol and JSON metadata over Unix domain sockets to a Go node agent, through NATS JetStream consumers into VictoriaMetrics and MongoDB, and exposed step-indexed training metrics via Go APIs and an Angular dashboard.</li>
+            <li>Built a real-time infrastructure observability pipeline by embedding Prometheus node_exporter (and go-nvml for per-GPU telemetry) into the Go node agent, streaming host metrics via NATS JetStream to VictoriaMetrics, and serving PromQL-backed utilization charts (CPU, memory, disk, network) in Angular.</li>
+            <li>Designed and implemented multi-tenant Organizations and BYOC (Bring Your Own Cloud) secret management using OpenBao (KV v2 + Kubernetes Auth), refactoring the GPU provisioner from static startup credentials to per-org dynamic credential resolution.</li>
+            <li>Deployed and automated OpenBao and VictoriaMetrics on Kubernetes via Helm and GitHub Actions CI/CD, migrating platform secrets off GitHub Secrets.</li>
+          </ul>
+        </details>
+      </article>
+
+      <article class="entry">
+        <div class="entry-head">
           <h3>LFX Mentee, Podman Container Tools</h3>
           <span class="meta">Sep – Nov 2025</span>
         </div>

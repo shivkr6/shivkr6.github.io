@@ -335,7 +335,7 @@ main > section + section {
 
 /* Experience */
 .entry {
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.25rem;
 }
 
 .entry:last-child {
@@ -356,6 +356,19 @@ main > section + section {
 
 .entry p {
   margin: 0.35rem 0 0;
+}
+
+.entry details {
+  margin-top: 0.45rem;
+}
+
+.entry ul {
+  margin: 0.55rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.entry li + li {
+  margin-top: 0.5rem;
 }
 
 .entry blockquote {
