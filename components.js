@@ -5,9 +5,12 @@
   // from disk (file://) and on GitHub Pages.
   const ROOT = new URL(".", document.currentScript.src);
 
+  const IS_FILE = location.protocol === "file:";
+  const HOME_URL = new URL(IS_FILE ? "index.html" : "./", ROOT);
+
   const NAV = [
-    { label: "Home", href: "index.html" },
-    { label: "Blog", href: "blog/index.html" },
+    { label: "Home", href: IS_FILE ? "index.html" : "./", home: true },
+    { label: "Blog", href: IS_FILE ? "blog/index.html" : "blog/" },
     { label: "Talks", href: "talks.html" },
   ];
 
@@ -21,13 +24,13 @@
     connectedCallback() {
       const here = clean(location.href);
 
-      const links = NAV.map(({ label, href }) => {
+      const links = NAV.map(({ label, href, home }) => {
         const url = new URL(href, ROOT);
         const target = clean(url);
         let current = "";
         if (target === here) {
           current = ' aria-current="page"';
-        } else if (href !== "index.html" && here.startsWith(target)) {
+        } else if (!home && here.startsWith(target)) {
           // e.g. a blog post highlights "Blog"
           current = ' aria-current="true"';
         }
@@ -37,7 +40,7 @@
       this.innerHTML = `
         <a class="skip-link" href="#main">Skip to content</a>
         <header class="site-header">
-          <a class="site-name" href="${new URL("index.html", ROOT).href}">Shivang</a>
+          <a class="site-name" href="${HOME_URL.href}">Shivang</a>
           <nav aria-label="Main">${links}</nav>
         </header>`;
     }
@@ -55,12 +58,14 @@
   customElements.define("site-header", SiteHeader);
   customElements.define("site-footer", SiteFooter);
 
-  // Open external links in a new tab across all pages (including JS-rendered lists).
+  // Open external links in a new tab and drop trailing index.html on HTTP(S).
   document.addEventListener("DOMContentLoaded", () => {
-    for (const a of document.querySelectorAll('a[href^="http://"], a[href^="https://"]')) {
-      if (a.origin !== location.origin) {
+    for (const a of document.querySelectorAll("a[href]")) {
+      if ((a.protocol === "http:" || a.protocol === "https:") && a.origin !== location.origin) {
         a.target = "_blank";
         a.rel = "noopener noreferrer";
+      } else if (!IS_FILE && a.origin === location.origin && a.pathname.endsWith("/index.html")) {
+        a.pathname = a.pathname.slice(0, -"index.html".length);
       }
     }
   });
